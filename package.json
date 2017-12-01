@@ -1,21 +1,21 @@
 {
-  "name": "hubot-apiai",
+  "name": "hubot-dialogflow",
   "description": "Add smartness to hubot with API.AI",
-  "version": "0.0.5",
+  "version": "0.0.1",
   "author": "Olivier Jacques <ojacques2@gmail.com>",
   "keywords": "hubot, hubot-scripts, apiai, api.ai, natural, language, understanding, NLU",
   
   "repository": {
     "type": "git",
-    "url": "https://github.com/ojacques/hubot-apiai.git"
+    "url": "https://github.com/TMAers/hubot-dialogflow.git"
   },
 
   "bugs": {
-    "url": "https://github.com/ojacques/hubot-apiai/issues"
+    "url": "https://github.com/TMAers/hubot-dialogflow/issues"
   },
 
   "dependencies": {
-      "apiai": ""
+      "dialogflow": ""
   },
 
   "peerDependencies": {
@@ -36,7 +36,7 @@
     "mocha": "^2.1.0",
     "sinon": "^1.13.0",
     "sinon-chai": "^2.7.0",
-    "apiai": ""
+    "dialogflow": ""
   },
 
   "main": "index.coffee",

@@ -1,42 +1,40 @@
 # Add smartness to hubot with API.AI
 
-A hubot script that adds  conversational user experience with [api.ai](https://api.ai)
+A hubot script that adds  conversational user experience with [dialogflow](https://dialogflow.com)
 as back-end.
 
-When you talk to Hubot, this script sends the text to api.ai, which 
+When you talk to Hubot, this script sends the text to dialogflow, which 
 in turns handles the dialog and detects intents and parameters.
 Finally, the script [emits an event (robot.emit)](https://github.com/hubotio/hubot/blob/master/docs/scripting.md#events)
 so that it can be consumed by other scripts.
 
 ![example](https://raw.githubusercontent.com/ojacques/hubot-apiai/HEAD/img/hubot-api-ai.gif)
 
-See [`src/apiai.coffee`](https://github.com/ojacques/hubot-apiai/blob/master/src/apiai.coffee) 
+See [`src/dialogflow.coffee`](https://github.com/TMAers/hubot-dialogflow/blob/master/src/dialogflow.coffee) 
 for full documentation.
 
 ## Installation
 
-In hubot project repo, run:
+Clone or copy the dialogflow.coffee into your bot script folder.
 
-`npm install hubot-apiai --save`
+install dialogflow
 
-Then add **hubot-apiai** to your `external-scripts.json`:
-
-```json
-[
-  "hubot-apiai"
-]
-```
+`yarn add dialogflow`
+or
+`npm install dialogflow --save`
 
 ## Configuration variable
 
-`API_AI_CLIENT_ACCESS_TOKEN`: API AI client access token which you get from https://console.api.ai/api-client/ 
+`DIALOGFLOW_PROJECT_ID`: dialogflow project id which you get from https://console.dialogflow.com/api-client/
+
+`GOOGLE_APPLICATION_CREDENTIALS`: path to the google sevice account key json file
 
 ## Create listener scripts
 
-hubot-apiai will [emit events](https://github.com/hubotio/hubot/blob/master/docs/scripting.md#events)
+hubot-dialogflow will [emit events](https://github.com/hubotio/hubot/blob/master/docs/scripting.md#events)
 which correspond to intents that you describe in API.AI.
 
-Let's say that you have an intent called `help-me` in API.AI. You can create
+Let's say that you have an intent called `help-me` in dialogflow. You can create
 an hubot script which will act on `help-me` intents:
 
 ```
@@ -47,10 +45,7 @@ module.exports = (robot) ->
 
 The parameters from the intent are passed as part of Hubot's event.
 
-## NPM Module
-
-https://www.npmjs.com/package/hubot-apiai
-
 ## TODO
 
 - Add tests
+- put this to NPM
